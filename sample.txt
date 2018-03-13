@@ -1,0 +1,8 @@
+This is some samle text
+To do text analysis on
+
+
+This file is purely for testing
+
+Functions such as average words per line, and average line length, will be testedon the contents of this textfile.
+
