@@ -12,7 +12,7 @@ public class WordFormatter {
 		System.out.println("Starting work on the word formatter now...");
 		
 		
-		//Replace this later with file opening
+		//Replace this later with file opening GUI JPanel/JFrame
 		try {
 			String sampleText = new String(Files.readAllBytes(Paths.get("sample.txt")));
 			//System.out.println(sampleText);
@@ -20,17 +20,36 @@ public class WordFormatter {
 			averageWordsPerLine(sampleText);
 			averageLineLength(sampleText);
 
+			System.out.println(removeBlankLinesFromText(sampleText));
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		
 	}
 	
 	/* I am writing the methods here for now for ease of access
 	 * But will refactor them to their own class later
 	 */
+	
+	
+	
+	public static String removeBlankLinesFromText(String text) {
+		
+		String[] lines = text.split("\n");
+		String newString = "";
+		
+		for(int i=0;i<lines.length;i++) {
+			if(lines[i].trim().length() != 0) {
+				newString = newString + lines[i] + "\n";
+			}
+		}
+		
+		
+		return newString;
+		
+	}
 	
 	public static double averageWordsPerLine(String text) {
 		
