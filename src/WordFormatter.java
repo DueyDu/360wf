@@ -21,6 +21,7 @@ public class WordFormatter {
 			averageLineLength(sampleText);
 
 			System.out.println(removeBlankLinesFromText(sampleText));
+			
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -32,8 +33,26 @@ public class WordFormatter {
 	/* I am writing the methods here for now for ease of access
 	 * But will refactor them to their own class later
 	 */
+	public static int wordsProcessed(String text) {
+		int wordCount = 0;
+		
+		String[] lines = text.split("\n");
+		
+		for(int i=0;i<lines.length;i++) {
+			wordCount = wordCount + lines[i].split(" ").length;
+		}
+		
+		System.out.println("Words processed: " + wordCount);
+
+		return wordCount;
+	}
 	
-	
+	public static int lines(String text) {
+		int lineCount = text.split("\n").length;
+		System.out.println("Words processed: " + lineCount);
+
+		return lineCount;
+	}
 	
 	public static String removeBlankLinesFromText(String text) {
 		
