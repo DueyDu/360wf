@@ -29,7 +29,28 @@ public class WordFormatter {
 		}
 		
 	}
-	
+	/* Right Justification of lines with 80 characters */
+	public static void rightJustify(String text)
+	{
+		String[] lines = text.split("\n");
+		double lineCount = (double)lines.length;
+		for(int i = 0; i < lineCount; i++)
+		{
+			System.out.printf("%80s",lines[i]);
+			System.out.println();
+		}    
+	}
+	/* Left Justification of lines with 80 characters */
+	public static void leftJustify(String text)
+	{
+		String[] lines = text.split("\n");
+		double lineCount = (double)lines.length;
+		for(int i = 0; i < lineCount; i++)
+		{
+			System.out.printf("%-80s",lines[i]);
+			System.out.println();
+		}    
+	}
 	/* I am writing the methods here for now for ease of access
 	 * But will refactor them to their own class later
 	 */
